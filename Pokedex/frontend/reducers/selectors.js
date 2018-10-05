@@ -2,10 +2,11 @@
 
 export const selectAllPokemon = state => {
   let poke = state.entities.pokemon;
-  let pokemon = Object.keys(poke);
-  let result = [];
-  pokemon.forEach((el) => {
-    result.push(poke[el]);
-  });
-  return result;
+  return Object.values(poke);
+
+};
+
+export const selectPokemonItem = ({state, itemId}) => {
+  let item = state.entities.item[itemId];
+  return item;
 };
